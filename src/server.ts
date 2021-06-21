@@ -23,5 +23,3 @@ app.post("/teste-post", (request, response) => {
 
 // http://localhost:5001
 app.listen(5001, () => console.log("Server is running"));
-
-// Código: #together
