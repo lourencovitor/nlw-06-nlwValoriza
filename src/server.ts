@@ -3,6 +3,7 @@ import "express-async-errors";
 import express, { NextFunction, Request, Response } from "express";
 import { router } from "./routes";
 import cors from "cors";
+require("dotenv").config();
 
 import "./database";
 

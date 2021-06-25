@@ -21,10 +21,7 @@ export function ensureAuthenticated(
 
   try {
     // validar se token é válido
-    const { sub } = verify(
-      token,
-      "69f5689a42ae2058f16479bdcaf3b4ee"
-    ) as IPayload;
+    const { sub } = verify(token, process.env.HASH_KEY) as IPayload;
 
     // recuperar informações do usuario
     request.user_id = sub;
