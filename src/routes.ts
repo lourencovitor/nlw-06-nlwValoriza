@@ -3,6 +3,7 @@ import { AuthenticateUserController } from "./controllers/AutheticateUserControl
 import { CreateComplimentController } from "./controllers/CreateComplimentController";
 import { CreateTagController } from "./controllers/CreateTagController";
 import { CreateUserController } from "./controllers/CreateUserController";
+import { Health } from "./controllers/Health";
 import { ListTagsController } from "./controllers/ListTagsController";
 import { ListUserReceiveComplimentsController } from "./controllers/ListUserReceiveComplimentsController";
 import { ListUsersController } from "./controllers/ListUsersController";
@@ -22,7 +23,9 @@ const listUserReceiveComplimentsController =
   new ListUserReceiveComplimentsController();
 const listTagsController = new ListTagsController();
 const listUsersController = new ListUsersController();
+const health = new Health();
 
+router.get("/health", health.handle);
 router.post("/users", createUserController.handle);
 router.get("/users", ensureAuthenticated, listUsersController.handle);
 router.post(
